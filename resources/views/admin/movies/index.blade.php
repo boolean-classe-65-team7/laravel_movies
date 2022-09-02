@@ -4,14 +4,24 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-12 bg-dark text-light">
+            
 
                 @foreach ($movies as $movie)
-                    {{ $movie['title'] }}
+                    {{-- {{ $movie['title'] }}
                     {{ $movie['plot'] }}
-                    {{ $movie['url_img'] }}
+                    {{ $movie['url_img'] }} --}}
+                    <div class="col-6">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{{$movie['url_img']}}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">{{$movie['title']}}</h5>
+                          <p class="card-text">{{$movie['plot']}}</p>
+                          {{-- <a href="#" class="btn btn-primary">Go somewhere</a> --}}
+                        </div>
+                      </div>
+                    </div>
                 @endforeach
-            </div>
+
         </div>
     </div>
 @endsection
